@@ -78,3 +78,22 @@ dir(wn.synset('harmony.n.02'))
 
 #grouping words (from the book): If two synsets share a very specific hypernym = one that is low down in the hyperntm hierarchy- they must be closely related
 right = wn.synset('right_whale.n.01')
+orca = wn.synset('orca.n.01')
+minke = wn.synset('minke_whale.n.01')
+tortoise = wn.synset('tortoise.n.01')
+novel = wn.synset('novel.n.01')
+
+#TELL LOWEST BRANCH THEY HAVE IN COMMON, SUPER USEFUL
+right.lowest_common_hypernyms(minke)
+right.lowest_common_hypernyms(orca)
+right.lowest_common_hypernyms(tortoise)
+right.lowest_common_hypernyms(novel)
+
+#min_depth is how far down the tree something has to go
+wn.synset('baleen_whale.n.01').min_depth()
+wn.synset('vertabrate.n.01').min_depth()
+wn.synset('entity.n.01').min_depth()
+
+#path_similarity assigns a score in the range 0-1 based on the shortest
+#path that connects the concepts in the hypernym hierarchy
+right.path_similarity(minke)
